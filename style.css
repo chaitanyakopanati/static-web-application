@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.dummy{
+    
+    font-family: "Roboto", sans-serif;
+}
+:root{
+    --dark-choclate:#603936;
+    --dark-red:#E63946;
+    --light-color:#fff9c6;
+}
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+
+}
+.main-container{
+width: 1349px;
+margin-right: 0 auto;
+position: relative;
+height: auto;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 42px;
+}
+nav ul{
+    display: flex;
+    list-style:none;
+}
+nav ul li{
+    margin: 0px 16px;
+}
+nav ul li a{
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    color:(black red green blue)
+}
+nav ul li a.active{
+    color: var(--dark-red);
+}
+a.btn{
+    border-radius: 8px;
+    padding: 8px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 400ms;
+    
+}
+a.btn.light{
+border:1px solid black;
+}
+a.btn.light:hover{
+    background-color:var(--dark-red);
+    color:var(--light-color);
+}
+
+/* Hero section start */
+.hero-container{
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 131px);
+    position: relative;
+}
+.hero-container .hero-text h1{
+    font-family: "Oleo Script Swash Caps",cursive;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 100%;
+}
+.hero-container .hero-text p.subheading{
+font-size: 16px;
+line-height: 200%;
+width: 490px;
+margin-top: 16px;
+margin-bottom: 20px;
+}
+a.btn.dark{
+    background-color: var(--dark-choclate);
+    color: var(--light-color);
+    padding: 16px 32px;
+    display: inline-block;
+    border: 1px solid var(--dark-choclate);
+}
+a.btn.dark:hover{
+background-color: var(--light-color);
+color: var(--dark-red);
+border: 1px solid var(--dark-choclate);
+}
+.hero-container .hero-image{
+    flex:1;
+}
+.hero-container .hero-text{
+    flex: 1.5;
+}
+.hero-container .hero-image .hero-ground{
+    background-color: var(--light-color);
+    position:absolute;
+    bottom: 80px;
+    width: 360px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0px 6px 15px 4px rgba(0,0,0,0.25);
+    left: 90px;
+    z-index: -100;
+}
+/* Hero section end  */
+/* Social-icoons start */
+.social-icons{
+    position: absolute;
+    bottom: 28px;
+    right: 0px;
+}
+.social-icons a{
+    margin: 0 3px;
+    text-decoration:none;
+    display: inline-block;
+    transition: all 400ms;
+}
+.social-icons a:hover{
+    transform: scale(1.2);
+}
+/* Social-icoons end */
+/* baground images start */
+.hero-bg-right{
+position: absolute;
+left: 0px;
+top:0;
+z-index: -200;
+}
+.rightimgone{
+    position: absolute;
+    right: 150px;
+    top:0;
+    z-index: -200;
+    flex: 1;
+    }
+.rightimgtwo{
+    position: absolute;
+    left: 0;
+    top:600px;
+    bottom:-100px;
+    z-index: -200;
+}
+.rightimgthree{
+    position: absolute;
+    right:149px;
+    top:290px;
+    z-index: -200;
+    flex: 1;
+}
+.rightimgfour{
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 160px;
+    height: 100%;
+    z-index: -200; 
+}
+/* baground images end */
+/* animation start */
+.hero-bg-left img{
+    animation: move-images 1000ms forwards ease-in-out;
+    transform: translateX(-100%);
+}
+@keyframes move-images {
+       to{
+        transform: translateX(0);
+       } 
+}
+.hero-text h1, .hero-text p.subheading,
+.hero-text a.btn{
+    animation: content-text 2000ms forwards ease-in-out;
+    transform: translateY(-80px);
+    opacity:0;
+}
+.hero-text p.subheading{
+    animation-delay: 1000ms;
+}
+.hero-text a.btn{
+animation-delay: 1500ms;
+}
+@keyframes content-text{
+    50%{
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+nav .mobile-close,
+nav .mobile-menu,
+.mobile-navigation,
+#rightimgone-mobile,
+#rightimgtwo-mobile,
+#rightimgthree-mobile,
+#rightimgfour-mobile,
+ #hero-bg-right-mobile,
+#hero-bg-left-mobile{
+display: none;
+}
+/* animation end */
+/* mobile view start */
+@media(max-width:600px){
+    .hero-bg-left,
+    .hero-bg-right,
+    nav ul,
+    .hero-ground{
+        display: none;
+    }
+    .main-container{
+        width: 100%;
+        /* padding: 16px 16px; */
+    }
+    .logo{
+        z-index: 400;
+    }
+.logo img{
+    height: 30px;
+}
+.hero-container{
+    flex-direction: column;
+}
+.hero-image img{
+    height: 286px;
+}
+.hero-image{
+    margin-top: -50px;
+}
+.hero-container .hero-text{
+    text-align: center;
+}
+.hero-container .hero-text h1{
+font-size: 32px;
+line-height: 120%;
+}
+.hero-container .hero-text p.subheading{
+    width: 347px;
+    font-size: 16px;
+}
+a.btn.dark{
+    padding: 12px 32px;
+}
+.social-icons{
+    position: static;
+    text-align: center;
+    margin-top: -40px;
+}
+.hero-container .hero-text,
+.hero-container .hero-image{
+    flex: unset0
+}
+#hero-bg-right-mobile{
+    position: fixed;
+    top:0;
+    z-index: -100;
+}
+#rightimgone-mobile{
+    position: fixed;
+    top:0;
+    right:80px;
+    z-index: 200;
+    display: block;
+}
+#rightimgtwo-mobile{
+    position: fixed;
+    right:80px;
+    top:290px;
+    z-index: 200;
+    flex: 1;
+    display: block;
+}
+#rightimgthree-mobile{
+    position: fixed;
+    right:80px;
+    top:290px;
+    z-index: 200;
+    flex: 1;
+    display: block;
+}
+#rightimgfour-mobile{
+    position: fixed;
+    top: 0;
+    right:0;
+    width: 160px;
+    height: 100%;
+    z-index: 200; 
+    display: block;
+}
+nav.mobile-navigation{
+    display: flex;
+    z-index: 100;
+    background-color: var(--light-color) ;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+nav.mobile-navigation ul{
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+nav.mobile-navigation ul li{
+margin: 16px 0px;
+}
+nav.mobile-navigation ul li:last-child{
+    margin-top: 24px;
+}
+nav.mobile-menu.active{
+    opacity: 1;
+    pointer-events: auto;
+    }
+nav.mobile-close,
+nav.mobile-menu{
+z-index: 200;
+background-color: var(--light-color);
+box-shadow: 0px 4px 26px -3px rgba(0,0,0,0.22);
+border-radius: 0px 0px 24px;
+padding: 30px;
+position: fixed;
+top:0;
+left:0;
+right: 0;
+opacity: 0;
+pointer-events: none;
+display: block;
+}
+nav.mobile-close.active,
+nav.mobile-menu{
+    opacity: 1;
+    pointer-events: auto;
+    }
+}
+
+/* @media (max-width: 768px) { */
+    /* Make navbar items hidden on mobile */
+    /* nav ul {
+        display: none;
+    } */
+
+    /* Show mobile menu button */
+    /* .mobile-menu {
+        display: block;
+        cursor: pointer;
+    } */
+
+    /* Hide mobile close button by default */
+    /* .mobile-close {
+        display: none;
+        cursor: pointer;
+    } */
+
+    /* Display mobile navigation on menu button click */
+    /* .mobile-navigation {
+        display: none;
+    } */
+
+    /* Show the mobile navigation on active state */
+    /* .mobile-navigation.active {
+        display: block;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        background: #fff;
+    } */
+
+    /* Make hero images responsive for mobile */
+    /* .hero-container {
+        flex-direction: column;
+    } */
+
+    /* Adjust social icon display */
+    /* .social-icons {
+        text-align: center;
+    }
+} */
+
+/* Desktop View */
+/* @media (min-width: 769px) { */
+    /* Hide mobile menu and close icons on desktop */
+    /* .mobile-menu, .mobile-close {
+        display: none;
+    } */
+
+    /* Display nav items inline */
+    /* nav ul {
+        display: flex;
+    }
+} */
+/* mobile view end */
